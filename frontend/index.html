@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#16a34a" />
+    <meta name="description" content="Farmsetu - Direct Farm-to-Retail Marketplace Connecting Farmers & Retailers Across India" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Farmsetu" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Farmsetu - Connecting Farmers Directly to Retailers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Google Translate Widget - Hidden, we'll use our own button -->
+    <div id="google_translate_element" style="position:absolute;left:-9999px;top:-9999px;"></div>
+    
+    <script type="text/javascript">
+      // Load Google Translate
+      (function() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.onerror = function() {
+          console.error('Failed to load Google Translate script');
+        };
+        document.body.appendChild(script);
+        
+        window.googleTranslateElementInit = function() {
+          console.log('🌐 Initializing Google Translate...');
+          try {
+            new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+              autoDisplay: false,
+              includedLanguages: 'en,hi,ta,te,kn,mr,bn,gu,pa,ur,ne,si,my,zh-CN,zh-TW,ja,ko,th,vi,id,ms,tl,ar,fa,tr,ru,uk,pl,de,fr,es,it,pt,nl,sv,no,da,fi,el,he,cs,sk,hu,ro,bg,sr,hr,sl,et,lv,lt,sw,am,ha,yo,ig,zu,af,xh,st,tn,ts,ss,ve,nr,nso'
+            }, 'google_translate_element');
+            
+            console.log('✓ Google Translate loaded!');
+            
+            // Wait for widget to fully load, then check language
+            setTimeout(function() {
+              var iframe = document.querySelector('.goog-te-frame');
+              if (iframe) {
+                console.log('✓ Google Translate frame detected');
+                // Check current state
+                var selectBox = document.querySelector('.goog-te-combo');
+                if (selectBox) {
+                  console.log('Current language:', selectBox.value);
+                  if (selectBox.value !== 'en') {
+                    console.log('⚠️ Not in English, forcing change...');
+                    selectBox.value = 'en';
+                    var event = new Event('change');
+                    selectBox.dispatchEvent(event);
+                  }
+                }
+              }
+            }, 2000);
+          } catch(e) {
+            console.error('✗ Error:', e);
+          }
+        };
+      })();
+    </script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

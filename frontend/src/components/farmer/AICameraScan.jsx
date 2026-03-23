@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Camera, X, CheckCircle, AlertCircle, ScanLine, Sparkles, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';
-import * as tf from '@tensorflow/tfjs';
+import * as tf from '@tensorflow/tfjs'; 
 import * as mobilenet from '@tensorflow-models/mobilenet';
 
 // Crop detection database (simplified AI - in production, use TensorFlow.js or Google Vision API)

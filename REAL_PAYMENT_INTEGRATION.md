@@ -16,7 +16,7 @@ Account: Real Yes Bank Account
 ```
 
 ### How It Works:
-1. Retailer scans QR code → Opens UPI app
+1. Retailer scans QR code → Opens UPI app 
 2. UPI app shows **REAL beneficiary details**
 3. Amount auto-filled (order grand total)
 4. Retailer enters UPI PIN → **REAL money transferred**
@@ -70,7 +70,7 @@ Backend creates QR with:
 ✅ Real UPI ID: 9964655985-2@ybl
 ✅ Real Bank: Yes Bank
 ✅ Real Amount: ₹X,XXX (grand total)
-✅ Unique Transaction ID
+✅ Unique Transaction ID yes done
 ```
 
 #### **3. Retailer Scans QR Code**

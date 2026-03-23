@@ -1,6 +1,6 @@
 # 💳 Real Bank Account QR Payment Integration
 
-## ✅ **Payment Now Linked to REAL Bank Account**
+## ✅ **Payment Now Linked to REAL Bank Account.**
 
 The QR code payment system is now configured to process **REAL payments** directly to the specified bank account.
 
@@ -30,7 +30,7 @@ Account: Real Yes Bank Account
 
 **File:** `backend/src/controllers/paymentController.js`
 
-```javascript
+```javascript..
 // REAL UPI details configured
 const upiAddress = '9964655985-2@ybl'; // Real Yes Bank UPI
 const farmerName = farmer.farmName || farmer.userId?.name || 'Farmer';
